@@ -15,3 +15,10 @@ const renderItem = () => {
 
 addBtn.addEventListener('click', renderItem);
 
+const removeItem = (e) => {
+  e.target.remove('span');
+
+//  (e.target === 'span') ? e.target.closest('li').remove : undefined;
+}
+
+userList.addEventListener('click',removeItem);
