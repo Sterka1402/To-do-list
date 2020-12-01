@@ -13,5 +13,12 @@ const renderItem = () => {
   addTask.value = '';
 };
 
+const removeTask = (e) =>{
+  console.log(e.target);
+  e.target.remove('li');
+}
+
+userList.addEventListener('click',removeTask);
+
 addBtn.addEventListener('click', renderItem);
 
