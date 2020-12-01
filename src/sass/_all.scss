@@ -26,9 +26,9 @@ body{
 
   input{
     outline: 0;
-   
-    font-size: 22px;
+    font-size: 18px;
     padding: 20px;
+    margin: 10px;
     border-radius: 30px;
   }
 
@@ -45,7 +45,7 @@ body{
   }
 }
 
-.userList{
+.user-list{
   margin: 20px;
   padding: 30px;
   text-align: left;

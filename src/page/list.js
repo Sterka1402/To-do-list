@@ -1,7 +1,8 @@
-const userList = document.querySelector("user-list");
+const userList = document.querySelector(".user-list");
 const addTask = document.getElementById("new-task");
 const addBtn = document.getElementById("add-task");
 
+console.log(userList);
 
 const renderItem = () => {
   console.log(addTask.value);
