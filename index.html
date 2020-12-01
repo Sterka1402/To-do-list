@@ -8,14 +8,12 @@
 </head>
 <body>
   <div class="container">
-    <form action="newDo" method="POST">
-      <label>
-      <input  type="text" name="newTask" placeholder="What you need to do more?">
-      <button id="buttonToAdd">Add</button>
-    </label>
-    </form>
-    <div class="userList">
-      <ul>
+    <div class="add-new-task">
+      <input type="text" id="new-task" name="newTask" placeholder="What you need to do more?">
+      <button id="add-task">Add New Task"</button>
+    </div>
+    <div>
+      <ul class="user-list">
         <li>Play with a child</li>
         <li>Drink a glass of water</li>
         <li>Learn JavaScript</li>
@@ -24,6 +22,6 @@
       </ul>
     </div>
   </div>
-  <script src="bundle.js"></script>
+  <script src="dist/bundle.js"></script>
 </body>
 </html>
