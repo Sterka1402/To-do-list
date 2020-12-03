@@ -9,6 +9,9 @@ const renderItem = () => {
 
   const newLi = document.createElement('li');
   newLi.textContent = addTask.value;
+  const spanLi = document.createElement('span');
+  spanLi.textContent = 'X ';
+  newLi.prepend(spanLi);
   userList.append(newLi);
   addTask.value = '';
 };
@@ -16,9 +19,14 @@ const renderItem = () => {
 addBtn.addEventListener('click', renderItem);
 
 const removeItem = (e) => {
-  e.target.remove('span');
-
-//  (e.target === 'span') ? e.target.closest('li').remove : undefined;
+  console.log(e.target.tagName);
+  if  (e.target.tagName === 'SPAN') {
+    console.log(e.target.tagName);
+    const parentLi = e.target.closest('LI');
+   parentLi.remove();
+  } else {
+    return undefined;
+  }
 }
 
 userList.addEventListener('click',removeItem);
