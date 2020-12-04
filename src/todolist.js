@@ -26,9 +26,8 @@ function renderList (items = [], itemsList) {
   itemsList.innerHTML = items.map((item, index) => {
     console.log(index);
     return `
-      <li>
-        <input type="checkbox" data-index=${index} id="item${index}" ${item.done ? 'checked' : ''} />
-        <label for="item${index}">${item.text}</label>
+      <li id="${index}"/>
+        ${item.text}
       </li>
     `;
   }).join('');
@@ -50,5 +49,5 @@ console.log(list);
 //   }
 // }
 
-userList.addEventListener('click',removeItem);
+// userList.addEventListener('click',removeItem);
 
