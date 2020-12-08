@@ -1,4 +1,4 @@
 import './sass/main.scss';
-import './todolist';
+import './modules/todolist';
 
 console.log('App is running');

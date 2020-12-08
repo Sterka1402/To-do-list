@@ -8,7 +8,6 @@
 body{
   font-family: 'Courier New', Courier, monospace;
   font-size: 22px;
-  // background-color: linear-gradient(45deg,rgba(253,104,104,1), rgba(122,36,36,1));
   background-color:rgb(253, 104, 104);
 }
 .container {
@@ -53,20 +52,33 @@ body{
   background-color: white;
   color:rgb(99, 24, 37);
   
-
-  svg{
-    max-width: 18px;
-  }
-
+  
+  
   li{
     padding: 30px;
     list-style-type: none;
     padding: 20px auto;
     border-bottom: 1px solid rgb(99, 24, 37);
+    display: flex;
 
+ 
     li:hover {
       cursor: pointer;
       background-color: rgb(241, 125, 125);
     }
+    
+    img{
+      padding-right: 15px;
+      cursor: pointer;
+      max-height: 20px;
+    }
+
+    
   }
 }
+
+.done-list {
+  color: darkblue;
+  text-decoration: line-through;
+}
+
