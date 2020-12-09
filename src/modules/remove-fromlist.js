@@ -6,10 +6,9 @@ function removeFromList(e, list, userList) {
     const keyRemove = parentLi.dataset.key;
     const checkList = list[keyRemove].done;
 
-    if (checkList === true) {
-      list.splice(keyRemove, 1);
-      renderList(list, userList);
-    }
+    if (!checkList) return;
+    list.splice(keyRemove, 1);
+    renderList(list, userList);
   }
 }
 

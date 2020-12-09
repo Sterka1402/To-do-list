@@ -11,8 +11,8 @@ window.addEventListener('load', () => {
   const addTask = document.getElementById('new-task');
 
   renderList(list, userList);
-  
-  addTask.addEventListener('keydown', (e) => addToListEnter(e,list,userList,addTask));
+
+  addTask.addEventListener('keydown', (e) => addToListEnter(e, list, userList, addTask));
   addBtn.addEventListener('click', (e) => addToList(e, list, userList, addTask));
   userList.addEventListener('click', (e) => removeFromList(e, list, userList));
   userList.addEventListener('click', (e) => toggleDone(e, list, userList));
