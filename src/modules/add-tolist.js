@@ -8,6 +8,7 @@ function addToList(e, list, userList, addTask) {
       done: false,
     };
     list.push(item);
+    localStorage.setItem('list', JSON.stringify(list));
     renderList(list, userList);
     addTask.value = '';
   }

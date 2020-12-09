@@ -8,6 +8,7 @@ function removeFromList(e, list, userList) {
 
     if (!checkList) return;
     list.splice(keyRemove, 1);
+    localStorage.setItem('list', JSON.stringify(list));
     renderList(list, userList);
   }
 }

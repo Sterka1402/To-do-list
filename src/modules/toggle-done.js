@@ -5,6 +5,7 @@ function toggleDone(e, list, userList) {
     const itemLi = e.target;
     const indexLi = itemLi.dataset.key;
     list[indexLi].done = !list[indexLi].done;
+    localStorage.setItem('list', JSON.stringify(list));
     renderList(list, userList);
   }
 }

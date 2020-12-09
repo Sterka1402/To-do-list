@@ -7,7 +7,7 @@ import toggleDone from './toggle-done';
 window.addEventListener('load', () => {
   const userList = document.querySelector('.user-list');
   const addBtn = document.getElementById('add-btn');
-  const list = [{ text: 'Blalala', done: false }, { text: 'bla2', done: false }];
+  const list = JSON.parse(localStorage.getItem('list')) || [];
   const addTask = document.getElementById('new-task');
 
   renderList(list, userList);
