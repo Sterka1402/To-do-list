@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
   const list = JSON.parse(localStorage.getItem('list')) || [];
   const addTask = document.getElementById('new-task');
 
-  renderDay(list);
+  renderDay(userList);
   renderList(list, userList);
   addTask.addEventListener('keydown', (e) => addToListEnter(e, list, userList, addTask));
   addBtn.addEventListener('click', (e) => addToList(e, list, userList, addTask));
