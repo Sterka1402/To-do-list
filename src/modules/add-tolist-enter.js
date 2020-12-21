@@ -1,8 +1,8 @@
 import addToList from './add-tolist';
 
-function addToListEnter(e, list, userList, addTask) {
+function addToListEnter(e, list, listContainer, addTask) {
   if (e.keyCode === 13) {
-    addToList(e, list, userList, addTask);
+    addToList(e, list, listContainer, addTask);
   }
 }
 

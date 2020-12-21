@@ -1,4 +1,3 @@
-import renderList from './renderlist';
 import addToListEnter from './add-tolist-enter';
 import addToList from './add-tolist';
 import removeFromList from './remove-fromlist';
@@ -8,13 +7,13 @@ import countActiveTask from './count-active-task';
 
 window.addEventListener('load', () => {
   const listContainer = document.querySelector('.list-container');
-  const addBtn = document.getElementById('add-btn');
   const list = JSON.parse(localStorage.getItem('list')) || [];
   const addTask = document.getElementById('new-task');
+  const addBtn = document.getElementById('add-btn');
 
   renderDay();
   countActiveTask(list, listContainer);
-  renderList(list, listContainer);
+
   addTask.addEventListener('keydown', (e) => addToListEnter(e, list, listContainer, addTask));
   addBtn.addEventListener('click', (e) => addToList(e, list, listContainer, addTask));
   listContainer.addEventListener('click', (e) => removeFromList(e, list, listContainer));

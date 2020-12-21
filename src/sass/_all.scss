@@ -47,11 +47,9 @@ body{
     background-color: rgb(241, 125, 125);
     border-radius: 30px;
     padding: 10px;
-
     color: white;
   }
   button:hover{
-    background-color:  rgb(71, 6, 6);
     cursor: pointer;
   }
 }
@@ -64,15 +62,12 @@ body{
   background-color: white;
   color:rgb(99, 24, 37);
   
-  
-  
   li{
     padding: 30px;
     list-style-type: none;
     padding: 20px auto;
     border-bottom: 1px solid rgb(99, 24, 37);
     display: flex;
-
  
     li:hover {
       cursor: pointer;
@@ -84,8 +79,6 @@ body{
       cursor: pointer;
       max-height: 20px;
     }
-
-    
   }
 }
 

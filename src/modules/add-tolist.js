@@ -1,5 +1,3 @@
-import renderList from './renderlist';
-import renderDay from './render-day';
 import countActiveTask from './count-active-task';
 
 function addToList(e, list, listContainer, addTask) {
@@ -11,7 +9,7 @@ function addToList(e, list, listContainer, addTask) {
     };
     list.push(item);
     localStorage.setItem('list', JSON.stringify(list));
-    
+
     countActiveTask(list, listContainer);
     addTask.value = '';
   }
