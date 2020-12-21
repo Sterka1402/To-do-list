@@ -12,10 +12,17 @@ body{
 }
 .container {
   width: 780px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .current-date {
+  padding: 10px;
+  text-align: center;
+  h1{
+    padding-bottom: 10px;
+  }
+}
+.task-counting {
   padding: 20px;
   text-align: center;
 }
@@ -49,7 +56,7 @@ body{
   }
 }
 
-.user-list{
+.list-container{
   margin: 20px;
   padding: 30px;
   text-align: left;

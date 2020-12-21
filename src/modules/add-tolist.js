@@ -1,7 +1,8 @@
 import renderList from './renderlist';
 import renderDay from './render-day';
+import countActiveTask from './count-active-task';
 
-function addToList(e, list, userList, addTask) {
+function addToList(e, list, listContainer, addTask) {
   if (addTask.value !== '') {
     const text = addTask.value;
     const item = {
@@ -10,8 +11,8 @@ function addToList(e, list, userList, addTask) {
     };
     list.push(item);
     localStorage.setItem('list', JSON.stringify(list));
-    renderDay(userList);
-    renderList(list, userList);
+    
+    countActiveTask(list, listContainer);
     addTask.value = '';
   }
 }

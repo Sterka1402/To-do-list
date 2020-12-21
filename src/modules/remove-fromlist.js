@@ -1,6 +1,6 @@
 import renderList from './renderlist';
 
-function removeFromList(e, list, userList) {
+function removeFromList(e, list, listContainer) {
   if ((e.target.classList.contains('remove-list')) && (e.target.tagName === 'IMG')) {
     const parentLi = e.target.closest('LI');
     const keyRemove = parentLi.dataset.key;
@@ -9,7 +9,7 @@ function removeFromList(e, list, userList) {
     if (!checkList) return;
     list.splice(keyRemove, 1);
     localStorage.setItem('list', JSON.stringify(list));
-    renderList(list, userList);
+    renderList(list, listContainer);
   }
 }
 
