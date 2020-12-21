@@ -1,19 +1,21 @@
-import renderList from './renderlist';
 import addToListEnter from './add-tolist-enter';
 import addToList from './add-tolist';
 import removeFromList from './remove-fromlist';
 import toggleDone from './toggle-done';
+import renderDay from './render-day';
+import countActiveTask from './count-active-task';
 
 window.addEventListener('load', () => {
-  const userList = document.querySelector('.user-list');
-  const addBtn = document.getElementById('add-btn');
+  const listContainer = document.querySelector('.list-container');
   const list = JSON.parse(localStorage.getItem('list')) || [];
   const addTask = document.getElementById('new-task');
+  const addBtn = document.getElementById('add-btn');
 
-  renderList(list, userList);
+  renderDay();
+  countActiveTask(list, listContainer);
 
-  addTask.addEventListener('keydown', (e) => addToListEnter(e, list, userList, addTask));
-  addBtn.addEventListener('click', (e) => addToList(e, list, userList, addTask));
-  userList.addEventListener('click', (e) => removeFromList(e, list, userList));
-  userList.addEventListener('click', (e) => toggleDone(e, list, userList));
+  addTask.addEventListener('keydown', (e) => addToListEnter(e, list, listContainer, addTask));
+  addBtn.addEventListener('click', (e) => addToList(e, list, listContainer, addTask));
+  listContainer.addEventListener('click', (e) => removeFromList(e, list, listContainer));
+  listContainer.addEventListener('click', (e) => toggleDone(e, list, listContainer));
 });
