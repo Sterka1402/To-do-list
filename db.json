@@ -1,53 +1,27 @@
 {
   "posts": [
     {
-      "done": false,
-      "text": "MAma",
-      "id": 1
-    },
-    {
-      "done": true,
-      "text": "MAma2",
-      "id": 2
-    },
-    {
-      "done": true,
-      "text": "MAma3",
-      "id": 3
-    },
-    {
-      "text": "main",
+      "text": "gsgsgsg",
       "done": false,
       "id": 4
     },
     {
-      "text": "dadadad",
+      "text": "new year",
       "done": false,
       "id": 5
     },
     {
-      "text": "trtr",
-      "done": false,
+      "text": "2020",
+      "done": true,
       "id": 6
     },
     {
-      "text": "fjfhihthd'",
+      "text": "2021",
       "done": false,
       "id": 7
-    },
-    {
-      "text": "main",
-      "done": false,
-      "id": 8
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }

@@ -13,10 +13,10 @@ window.addEventListener('load', () => {
   const listUrl = 'http://localhost:3000/posts';
 
   renderDay();
-   countActiveTask(listContainer, listUrl);
+  countActiveTask(listContainer, listUrl);
 
-  addTask.addEventListener('keydown', (e) => addToListEnter(e, listContainer, addTask,listUrl));
-  addBtn.addEventListener('click', (e) => addToList(e, listContainer, addTask,listUrl));
-  listContainer.addEventListener('click', (e) => removeFromList(e, listContainer,listUrl));
-  listContainer.addEventListener('click', (e) => toggleDone(e, listContainer,listUrl));
+  addTask.addEventListener('keydown', (e) => addToListEnter(e, listContainer, addTask, listUrl));
+  addBtn.addEventListener('click', (e) => addToList(e, listContainer, addTask, listUrl));
+  listContainer.addEventListener('click', (e) => removeFromList(e, listContainer, listUrl));
+  listContainer.addEventListener('click', (e) => toggleDone(e, listContainer, listUrl));
 });
