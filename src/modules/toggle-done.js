@@ -1,22 +1,28 @@
-import updateToggleList from './update-toggle-list';
+import { getList, updateList } from './request-list';
+import renderList from './renderlist';
+import countActiveTask from './count-active-task';
 
-function toggleDone(e, listContainer, listUrl) {
-  let updateList;
+const toggleDone = (e, listContainer, listUrl) => {
+  
+  let toggleList;
   let toggleId = 0;
-  const list = JSON.parse(localStorage.getItem('list')) || [];
+  const list = getList(listUrl) || [];
 
   if ((e.target.classList.contains('check-list')) && (e.target.tagName === 'LI')) {
     const itemLi = e.target;
     toggleId = itemLi.dataset.key;
     for (let i = 0; i < list.length; i++) {
-      if (list[i].id == toggleId) {
+      if (list[i].id === String(toggleId)) {
         list[i].done = !list[i].done;
-        updateList = list[i];
-        localStorage.setItem('list', JSON.stringify(list));
+        toggleList = list[i];
       }
     }
   }
-  updateToggleList(listContainer, listUrl, updateList, toggleId);
-}
+
+  updateList(listUrl, toggleList, toggleId);
+  countActiveTask(listContainer, listUrl);
+  renderList(listContainer, listUrl);
+
+};
 
 export default toggleDone;
