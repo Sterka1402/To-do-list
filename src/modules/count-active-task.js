@@ -1,8 +1,7 @@
-import * as getList from './request-list';
+//  import { getList } from './request-list';
 
-const countActiveTask = async (listContainer, listUrl) => {
- 
-  const list = await getList(listUrl) || [];
+const countActiveTask = async (list) => {
+  // const list = await getList(listUrl) || [];
   const countList = list.filter((item) => (!item.done));
   const showCount = ((countList.length === 0) ? 'No tasks today!' : (`You have ${countList.length} tasks today!`));
 
@@ -10,7 +9,6 @@ const countActiveTask = async (listContainer, listUrl) => {
   currentDay.innerHTML = `
     <p>${showCount}</p>
     `;
-  
 };
 
 export default countActiveTask;

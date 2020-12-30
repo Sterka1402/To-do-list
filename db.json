@@ -1,10 +1,5 @@
 {
-  "posts": [
-    {
-      "text": "gsgsgsg",
-      "done": false,
-      "id": 4
-    },
+  "lists": [
     {
       "text": "new year",
       "done": false,
@@ -19,6 +14,16 @@
       "text": "2021",
       "done": false,
       "id": 7
+    },
+    {
+      "text": "brows",
+      "done": true,
+      "id": 8
+    },
+    {
+      "text": "salads",
+      "done": false,
+      "id": 9
     }
   ],
   "comments": [],

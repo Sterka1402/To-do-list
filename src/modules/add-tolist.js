@@ -1,9 +1,8 @@
-import * as addList from './request-list';
+import { addList, getList } from './request-list';
 import countActiveTask from './count-active-task';
-import renderList from './renderlist';
+import renderList from './render-list';
 
-const addToList = async (e, listContainer, addTask, listUrl) => {
-  
+const addToList = async (listContainer, addTask, listUrl) => {
   if (addTask.value !== '') {
     const text = addTask.value;
     const newList = {
@@ -12,11 +11,12 @@ const addToList = async (e, listContainer, addTask, listUrl) => {
     };
 
     await addList(listUrl, newList);
-    countActiveTask(listContainer, listUrl);
-    renderList(listContainer, listUrl);
+    const list = await getList(listUrl) || [];
+
+    countActiveTask(list);
+    renderList(list, listContainer);
     addTask.value = '';
   }
-
 };
 
 export default addToList;
