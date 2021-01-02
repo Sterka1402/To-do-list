@@ -1,5 +1,5 @@
 import { addList, getList } from './request-list';
-import countActiveTask from './count-active-task';
+import countActiveTasks from './count-active-tasks';
 import renderList from './render-list';
 
 const addToList = async (listContainer, addTask, listUrl) => {
@@ -12,8 +12,9 @@ const addToList = async (listContainer, addTask, listUrl) => {
 
     await addList(listUrl, newList);
     const list = await getList(listUrl) || [];
-
-    countActiveTask(list);
+    // console.log(JSON.stringify(list));
+    localStorage.setItem('list', JSON.stringify(list));
+    countActiveTasks(list);
     renderList(list, listContainer);
     addTask.value = '';
   }

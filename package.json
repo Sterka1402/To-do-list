@@ -10,7 +10,7 @@
     "start": "webpack --watch",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
-    "start-server": "json-server --watch db.json"
+    "start:server": "json-server --watch db.json"
 
   },
   "repository": {
