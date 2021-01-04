@@ -7,7 +7,6 @@ const toggleDone = async (e, listContainer, listUrl) => {
     let toggleList;
     let toggleId = 0;
     let list = JSON.parse(localStorage.getItem('list')) || [];
-    console.log(list);
     const itemLi = e.target;
     toggleId = itemLi.dataset.key;
 

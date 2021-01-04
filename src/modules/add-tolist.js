@@ -12,7 +12,6 @@ const addToList = async (listContainer, addTask, listUrl) => {
 
     await addList(listUrl, newList);
     const list = await getList(listUrl) || [];
-    // console.log(JSON.stringify(list));
     localStorage.setItem('list', JSON.stringify(list));
     countActiveTasks(list);
     renderList(list, listContainer);

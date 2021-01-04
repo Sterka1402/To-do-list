@@ -6,7 +6,7 @@ const removeFromList = async (e, listContainer, listUrl) => {
     const parentLi = e.target.closest('LI');
     const keyRemove = parentLi.dataset.key;
     let list = JSON.parse(localStorage.getItem('list')) || [];
-    console.log(list);
+
     for (let i = 0; i < list.length; i++) {
       if (list[i].id === Number(keyRemove)) {
         const checkList = list[i].done;
