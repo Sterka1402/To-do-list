@@ -1,16 +1,23 @@
-import renderList from './renderlist';
+import { getList, deleteList } from './request-list';
+import renderList from './render-list';
 
-function removeFromList(e, list, listContainer) {
+const removeFromList = async (e, listContainer, listUrl) => {
   if ((e.target.classList.contains('remove-list')) && (e.target.tagName === 'IMG')) {
     const parentLi = e.target.closest('LI');
     const keyRemove = parentLi.dataset.key;
-    const checkList = list[keyRemove].done;
+    let list = JSON.parse(localStorage.getItem('list')) || [];
 
-    if (!checkList) return;
-    list.splice(keyRemove, 1);
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].id === Number(keyRemove)) {
+        const checkList = list[i].done;
+        if (!checkList) return;
+      }
+    }
+    await deleteList(listUrl, keyRemove);
+    list = await getList(listUrl);
     localStorage.setItem('list', JSON.stringify(list));
     renderList(list, listContainer);
   }
-}
+};
 
 export default removeFromList;

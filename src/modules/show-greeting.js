@@ -1,4 +1,4 @@
-function renderDay() {
+function showGreeting() {
   const currentDay = document.querySelector('.current-date');
   const day = new Date();
   const curWeekDate = day.getDay();
@@ -9,4 +9,4 @@ function renderDay() {
   `;
 }
 
-export default renderDay;
+export default showGreeting;

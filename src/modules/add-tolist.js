@@ -1,18 +1,22 @@
-import countActiveTask from './count-active-task';
+import { addList, getList } from './request-list';
+import countActiveTasks from './count-active-tasks';
+import renderList from './render-list';
 
-function addToList(e, list, listContainer, addTask) {
+const addToList = async (listContainer, addTask, listUrl) => {
   if (addTask.value !== '') {
     const text = addTask.value;
-    const item = {
+    const newList = {
       text,
       done: false,
     };
-    list.push(item);
-    localStorage.setItem('list', JSON.stringify(list));
 
-    countActiveTask(list, listContainer);
+    await addList(listUrl, newList);
+    const list = await getList(listUrl) || [];
+    localStorage.setItem('list', JSON.stringify(list));
+    countActiveTasks(list);
+    renderList(list, listContainer);
     addTask.value = '';
   }
-}
+};
 
 export default addToList;
